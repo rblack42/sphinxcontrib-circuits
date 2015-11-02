@@ -1,0 +1,7 @@
+__title__ = 'circuits'
+__summary__ = 'Drawing Circuits with M4'
+__url__ = 'https://github.com/rblack42/rstParser'
+__version__ = '0.1-dev'
+__author__ = 'Roie R. Black'
+__email__ = 'rblack@austincc.edu'
+__license__ = 'BSD 3-Clause'

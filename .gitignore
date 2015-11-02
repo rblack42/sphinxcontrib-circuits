@@ -1,0 +1,16 @@
+# Python
+*.pyc
+
+# Vim
+*~
+*.swp
+
+# GitHub
+/gh-pages
+
+# virtualenv
+/_venv
+
+# Mac
+.DS_Store
+
