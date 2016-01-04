@@ -3,6 +3,7 @@ import os
 import sys
 import sphinx_rtd_theme
 sys.path.insert(0,'../src')
+sys.path.insert(0, '.')
 import circuits.__about__ as about
 version = about.__version__
 author = about.__author__
@@ -11,9 +12,10 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
+    'sphinx_exts.rail',
 ]
 if os.getenv('SPELLCHECK'):
-    extensions += 'sphinxcontrib.spelling',
+    extensions += 'sphinxcontrib.spelling'
     spelling_show_suggestions = True,
     spelling_lang = 'en_US'
 

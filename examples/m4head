@@ -1,0 +1,6 @@
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize
+\pagestyle{empty}
+\begin{document}

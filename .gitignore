@@ -1,5 +1,6 @@
 # Python
 *.pyc
+*.egg-info
 
 # Vim
 *~
@@ -13,4 +14,18 @@
 
 # Mac
 .DS_Store
+
+# disutils
+/dist
+
+.tox/
+bin/
+include/
+lib/
+
+# Sphinx
+_build
+.travis-solo
+.ropeproject
+
 

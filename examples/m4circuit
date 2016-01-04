@@ -1,0 +1,39 @@
+#! /bin/bash
+
+####################################################################################################
+
+input=$1
+
+####################################################################################################
+
+m4_path=$HOME/_lib/circuits
+density=300
+transparent=white
+
+####################################################################################################
+
+cat > picture.tex <<EOF
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize
+\pagestyle{empty}
+\begin{document}
+EOF
+
+m4 -I ${m4_path} pgf.m4 libcct.m4 ${input}.m4 | dpic -g >> picture.tex
+if [ $? -gt 0 ]; then
+  echo Error
+  rm picture*
+  exit 1
+fi
+
+cat >> picture.tex <<EOF
+\end{document}
+EOF
+
+# cat picture.tex
+pdflatex -shell-escape picture.tex
+cp picture-figure0.pdf ${input}.pdf
+
+convert -density ${density} -transparent ${transparent} ${input}.pdf ${input}.png
